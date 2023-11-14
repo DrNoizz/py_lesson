@@ -1,0 +1,3 @@
+git remote set-url origin {your-new-url}
+
+ВЫПОЛНЯЕМ В ПАПКЕ С ФАЙЛОМ В КОНСОЛИ GIT
