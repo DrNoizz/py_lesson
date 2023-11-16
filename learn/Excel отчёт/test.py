@@ -18,7 +18,7 @@ for row in range(2, sheet.max_row + 1):  # Начинаем с 2-ой строк
     dt = datetime.now(pytz.timezone('Europe/Moscow'))
     dt = dt.replace(microsecond=0)
 
-    if date < dt:
+    if date > dt:
         print(zno, object, control_time, group, employee, sep='  |-----|  ')
 
 

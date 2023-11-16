@@ -15,5 +15,5 @@ for row in range(2, sheet.max_row + 1):  # Начинаем с 2-ой строк
     # date_obj = datetime.strptime(control_time, format)
     dt = datetime.now(pytz.timezone('Europe/Moscow'))
     dt = dt.replace(microsecond=0)
-    if date <= datetime.now(pytz.timezone('Europe/Moscow')):
+    if date > datetime.now(pytz.timezone('Europe/Moscow')):
         print(zno, object, control_time, group, employee)
