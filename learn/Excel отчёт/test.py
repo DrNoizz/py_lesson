@@ -11,9 +11,14 @@ for row in range(2, sheet.max_row + 1):  # Начинаем с 2-ой строк
     group = sheet[row][8].value
     employee = sheet[row][9].value
     date = control_time
-    # format = "%y/%m/%d %H:%M:%S"
-    # date_obj = datetime.strptime(control_time, format)
+    date = date.replace(tzinfo=pytz.timezone('Europe/Moscow'))
+    format = "%y/%m/%d %H:%M:%S"
+
     dt = datetime.now(pytz.timezone('Europe/Moscow'))
     dt = dt.replace(microsecond=0)
-    if date <= datetime.now(pytz.timezone('Europe/Moscow')):
+
+    # print(type(dt), type(date))
+    if date < dt:
         print(zno, object, control_time, group, employee)
+
+# date = date.replace(tzinfo=pytz.timezone('Europe/Moscow'))

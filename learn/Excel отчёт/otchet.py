@@ -42,7 +42,7 @@ for row in range(1, sheet.max_row + 1):
     control_time = sheet[row][6].value
     group = sheet[row][8].value
     employee = sheet[row][9].value
-    print(row, zno, object, control_time, group, employee)
+    print(zno, object, control_time, group, employee)
     print()
 
 sheet_1 = book.worksheets[1]
