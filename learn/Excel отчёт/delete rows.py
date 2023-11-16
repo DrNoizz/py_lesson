@@ -13,11 +13,11 @@ for row in range(2, sheet.max_row + 1):  # Начинаем с 2-ой строк
     employee = sheet[row][9].value
     date = control_time
     date = date.replace(tzinfo=pytz.timezone('Europe/Moscow')) # replace для приведения обеих дат к одному виду, иначе ошибка "can't compare offset-naive and offset-aware datetimes"!
-    format = "%y/%m/%d %H:%M:%S"
+    # format = "%y/%m/%d %H:%M:%S"
 
     dt = datetime.now(pytz.timezone('Europe/Moscow'))
     dt = dt.replace(microsecond=0) # удаляем микросекунды из формата datetime
 
     if date > dt:
-        print(zno, object, control_time, group, employee, sep='  |-----|  ')
-    print()
+        # sheet.delete_rows(2)
+        print(zno, object, control_time, group, employee, sep='\t')
